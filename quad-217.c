@@ -12,7 +12,7 @@ void printquad(const int *array, const int sum, const int size)
             for (j = i+1; j < size-2 ; ++j)
                 for (k = j+1; k < size-1; ++k)
                     for(l = k+1; l < size; ++l)
-                        if (array[i]+array[j]+array[k]+array[l]==20)
+                        if (array[i]+array[j]+array[k]+array[l]==sum)
                             printf("\n(%d,%d,%d,%d)",array[i], array[j], array[k], array[l]);
 
                            
@@ -23,6 +23,8 @@ int main()
     FILE *fptr;
     char file_name[10];
     int sum;
+    int numbers[20];
+    int size;
 
     printf("Enter the file name : ");
     scanf("%s",file_name);
@@ -31,8 +33,7 @@ int main()
 
     fptr = fopen(file_name, "r");
 
-    int numbers[20];
-    int size;
+
 
     while((fscanf(fptr,"%d",&numbers[size]))!=EOF)
         size++;
